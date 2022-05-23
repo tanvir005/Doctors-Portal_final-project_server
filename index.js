@@ -140,6 +140,7 @@ async function run() {
 
     app.post('/booking', async (req, res) => {
       const booking = req.body;
+      console.log(booking);
       const query = { treatment: booking.treatment, date: booking.date, pateient: booking.pateient }
       const exist = await bookingCollection.findOne(query);
       if (exist) {
